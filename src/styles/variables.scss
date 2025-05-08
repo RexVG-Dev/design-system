@@ -1,0 +1,20 @@
+:root {
+  --color-primary: #4a86e8;
+  --color-primary-hover: #1155cc;
+  --color-primary-pressed: #1c4587;
+
+  --color-secondary: #ffffff;
+  --color-link: #4a86e8;
+
+  --text-primary: #ffffff;
+  --text-secondary: #4a86e8;
+
+  --border-color: #4a86e8;
+}
+
+[data-theme='dark'] {
+  --color-primary: #222;
+  --color-primary-hover: #333;
+  --color-primary-pressed: #444;
+  --text-primary: #fff;
+}

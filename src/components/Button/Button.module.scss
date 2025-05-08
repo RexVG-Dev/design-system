@@ -1,0 +1,79 @@
+@use '@styles/variables.scss' as *;
+
+.button {
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+  font-weight: 400;
+  border-radius: 4px;
+  transition: all 0.2s;
+  width: auto;
+
+  &--primary {
+    background-color: var(--color-primary);
+    color: var(--text-primary);
+
+    &:hover {
+      background-color: var(--color-primary-hover);
+    }
+
+    &:active {
+      background-color: var(--color-primary-pressed);
+    }
+  }
+
+  &--secondary {
+    background-color: white;
+    border: 1px solid var(--border-color);
+    color: var(--color-primary);
+
+    &:hover {
+      background-color: #e9effb;
+      color: var(--color-primary-hover);
+    }
+
+    &:active {
+      background-color: var(--color-primary);
+      color: white;
+    }
+  }
+
+  &--link {
+    background: none;
+    color: var(--color-link);
+    padding: 0;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &:active {
+      color: var(--color-primary-hover);
+    }
+  }
+
+  &--small {
+    padding: 4px 12px;
+    font-size: 12px;
+  }
+
+  &--medium {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  &--large {
+    padding: 12px 24px;
+    font-size: 16px;
+  }
+
+  &--fluent {
+    width: 100%;
+    padding: 12px 24px;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
