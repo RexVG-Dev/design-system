@@ -41,7 +41,7 @@ type Story = StoryObj<ButtonProps>;
 
 export const PlayGround: Story = {
   args: {
-    variant: VARIANT.primary,
+    variant: "secondary",
     size: SIZE.medium,
     ariaLabel: 'Button',
     children: 'Button',

@@ -1,14 +1,22 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css'
 import { Button, VARIANT, SIZE } from '@components/Button';
 import { Modal } from '@components/Modal';
 
 function App() {
+  const [theme, setTheme] = useState('light');
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleOpen = () => setIsModalOpen(true);
   const handleClose = () => setIsModalOpen(false);
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
+  };
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+  }, [theme]);
 
   return (
     <>
@@ -21,6 +29,12 @@ function App() {
         >
           Open Modal
         </Button>
+        <Button
+          variant={VARIANT.secondary}
+          size={SIZE.small}
+          ariaLabel="Toggle theme"
+          onClick={toggleTheme}
+        >Change Theme</Button>
         <Modal
         isOpen={isModalOpen}
         onClose={handleClose}

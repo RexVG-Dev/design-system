@@ -12,7 +12,7 @@
 }
 
 .modal {
-  background-color: white;
+  background-color: var(--white);
   border-radius: 8px;
   padding: 20px;
   width: 500px;
@@ -36,11 +36,11 @@
   font-size: 24px;
   cursor: pointer;
   padding: 0;
-  color: #888;
+  color: var(--gray-200);
   transition: color 0.3s;
 
   &:hover {
-    color: #333;
+    color: var(--gray-300);
   }
 }
 

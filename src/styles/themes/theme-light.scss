@@ -1,0 +1,19 @@
+:root {
+  --color-primary: var(--blue-500);
+  --color-primary-hover: var(--blue-600);
+  --color-primary-pressed: var(--blue-700);
+
+  --color-secondary: var(--white);
+  --color-secondary-hover: var(--gray-100);
+  --color-secondary-pressed: var(--blue-500);
+
+  --text-primary: var(--white);
+  --text-secondary: var(--blue-600);
+  --text-secondary-pressed: var(--white);
+  --text-link: var(--blue-500);
+  --text-link-pressed: var(--blue-600);
+
+  --border-color: var(--blue-600);
+  --border-color-secondary: var(--blue-500);
+  --border-color-secondary-hover: var(--blue-600);
+}
