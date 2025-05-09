@@ -55,6 +55,22 @@ import { Modal } from '@components/Modal';
   - **Customization:** Easily customize the buttons with variants and sizes, and modals with optional footer actions.
   - **Responsiveness:** The components adapt to different screen sizes and are styled using SCSS modules with CSS variables for easy theming.
 
+:
+
+## 📘 Storybook
+This project uses Storybook to visualize and test component use cases in isolation. It allows you to browse components in isolation
+
+Run Storybook locally
+```
+npm run storybook
+```
+
+This will launch Storybook at **http://localhost:6006** (by default), where you can explore the **Button** and **Modal** components interactively.
+
+Feel free to explore the documented use cases.
+When adding new components or features, make sure to create corresponding stories in Storybook.
+Refer to the existing Button and Modal stories as examples for future integrations.
+
 ## Installation
  - Clone the repository:
 ```
