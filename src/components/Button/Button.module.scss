@@ -1,5 +1,3 @@
-@use '@styles/variables.scss' as *;
-
 .button {
   padding: 8px 16px;
   border: none;
@@ -23,24 +21,25 @@
   }
 
   &--secondary {
-    background-color: white;
-    border: 1px solid var(--border-color);
-    color: var(--color-primary);
+    background-color: var(--color-secondary);
+    border: 1px solid var(--border-color-secondary);
+    color: var(--text-secondary);
 
     &:hover {
-      background-color: #e9effb;
-      color: var(--color-primary-hover);
+      background-color: var(--color-secondary-hover);
+      color: var(--text-secondary-hover);
     }
 
     &:active {
-      background-color: var(--color-primary);
-      color: white;
+      background-color: var(--color-secondary-pressed);
+      border: 1px solid var(--border-color-secondary);
+      color: var(--text-secondary-pressed);
     }
   }
 
   &--link {
     background: none;
-    color: var(--color-link);
+    color: var(--text-link);
     padding: 0;
 
     &:hover {
@@ -48,7 +47,7 @@
     }
 
     &:active {
-      color: var(--color-primary-hover);
+      color: var(--text-link-pressed);
     }
   }
 

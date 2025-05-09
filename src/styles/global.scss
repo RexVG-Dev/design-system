@@ -1,0 +1,9 @@
+@use './colors.scss';
+@use './themes/theme-light.scss';
+@use './themes/theme-dark.scss';
+
+body {
+  font-family: sans-serif;
+  background-color: var(--color-secondary);
+  transition: background-color 0.3s, color 0.3s;
+}
