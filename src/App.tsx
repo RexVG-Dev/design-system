@@ -36,33 +36,33 @@ function App() {
           onClick={toggleTheme}
         >Change Theme</Button>
         <Modal
-        isOpen={isModalOpen}
-        onClose={handleClose}
-        ariaLabel="Confirmation dialog"
-        title="Delete item"
-        footer={{
-          link: {
-            text: 'Cancel',
-            ariaLabel: 'Cancel deletion',
-            onClick: handleClose,
-          },
-          secondary: {
-            text: 'Dismiss',
-            ariaLabel: 'Dismiss modal',
-            onClick: () => alert('Dismiss clicked'),
-          },
-          primary: {
-            text: 'Confirm',
-            ariaLabel: 'Confirm deletion',
-            onClick: () => {
-              alert('Deleted!');
-              handleClose();
+          isOpen={isModalOpen}
+          onClose={handleClose}
+          ariaLabel="Confirmation dialog"
+          title="Delete item"
+          footer={{
+            link: {
+              text: 'Cancel',
+              ariaLabel: 'Cancel deletion',
+              onClick: handleClose,
             },
-          },
-        }}
-      >
-        <p>Are you sure you want to delete this item? This action is irreversible.</p>
-      </Modal>
+            secondary: {
+              text: 'Dismiss',
+              ariaLabel: 'Dismiss modal',
+              onClick: () => alert('Dismiss clicked'),
+            },
+            primary: {
+              text: 'Confirm',
+              ariaLabel: 'Confirm deletion',
+              onClick: () => {
+                alert('Deleted!');
+                handleClose();
+              },
+            },
+          }}
+        >
+          <p>Are you sure you want to delete this item? This action is irreversible.</p>
+        </Modal>
       </div>
     </>
   )

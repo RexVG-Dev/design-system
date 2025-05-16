@@ -1,4 +1,6 @@
 import { useEffect, useRef } from 'react';
+import { FocusTrap } from 'focus-trap-react';
+
 import { type ModalProps } from './Modal.types';
 import { ModalFooter } from './ModalFooter/ModalFooter';
 
@@ -30,6 +32,12 @@ export const Modal = ({
     return () => window.removeEventListener('keydown', handleKeydown);
   }, [isOpen, onClose]);
 
+  useEffect(() => {
+    if (isOpen && modalRef.current) {
+      modalRef.current.focus();
+    }
+  }, [isOpen])
+
   const handleOverlayClick = (e: React.MouseEvent) => {
     if (modalRef.current && !modalRef.current.contains(e.target as Node)) {
       onClose();
@@ -41,30 +49,48 @@ export const Modal = ({
   return (
     <div
       className={styles.overlay}
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="modal-title"
-      aria-label={ariaLabel}
       onClick={handleOverlayClick}
     >
-      <div className={styles.modal} ref={modalRef}>
-        <div className={styles.header}>
-          <h2 id="modal-title">{title}</h2>
-          <button
-            aria-label="Close modal"
-            className={styles.closeButton}
-            onClick={onClose}
+      <FocusTrap
+        active={isOpen}
+        focusTrapOptions={{
+          initialFocus: () => modalRef.current,
+          escapeDeactivates: false,
+          clickOutsideDeactivates: false,
+        }
+        }
+      >
+        <div
+          className={styles.modal}
+          ref={modalRef}
+          role='dialog'
+          aria-modal="true"
+          aria-label={ariaLabel}
+        >
+          <div
+            className={styles.header}
+            tabIndex={0}
           >
-            &times;
-          </button>
-        </div>
+            <h2 id="modal-title">{title}</h2>
+            <button
+              aria-label="Close modal"
+              className={styles.closeButton}
+              onClick={onClose}
+            >
+              &times;
+            </button>
+          </div>
 
-        <div className={styles.content}>
-          {children}
-        </div>
+          <div
+            tabIndex={0}
+            className={styles.content}
+            id="modal-description">
+            {children}
+          </div>
 
-        {footer && <ModalFooter {...footer} />}
-      </div>
+          {footer && <ModalFooter {...footer} />}
+        </div>
+      </FocusTrap>
     </div>
   );
 };
