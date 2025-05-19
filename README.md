@@ -85,7 +85,7 @@ npm install
 
 To run the development environment:
 ```
-npm start
+npm run dev
 ```
 
 To run tests:
